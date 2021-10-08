@@ -1,13 +1,15 @@
 package ir.ac.kntu.universityManagement.controllers;
 
-import ir.ac.kntu.universityManagement.repositories.InstructorRepository;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
-public class InstructorSmartPart {
+public class MainPageSmartPart extends Application {
 
-    public static InstructorRepository instructorRepository;
+    public static void main(String[] args) {
+        launch(args);
+    }
 
+    @Override
     public void start(Stage primaryStage) {
 
     }

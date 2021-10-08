@@ -8,11 +8,12 @@
 		<version>2.5.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>ir.ac.kntu.LibraryManagement</groupId>
-	<artifactId>LibraryManagement</artifactId>
+	<groupId>ir.ac.kntu.UniversityManagement</groupId>
+	<artifactId>UniversityManagement</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>LibraryManagement</name>
-	<description>Demo project for Spring Boot</description>
+	<packaging>jar</packaging>
+	<name>UniversityManagement</name>
+	<description>A Simple Desktop Application for Managing a University</description>
 	<properties>
 		<java.version>11</java.version>
 		<maven.compiler.source>1.8</maven.compiler.source>
@@ -24,10 +25,10 @@
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 			<version>2.5.4</version>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter-security</artifactId>-->
+<!--		</dependency>-->
 
 		<dependency>
 			<groupId>com.oracle.database.jdbc</groupId>
@@ -58,6 +59,9 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>${project.parent.version}</version>
 				<configuration>
+					<archive>
+						<manifestFile>src/main/resources/META-INF/MANIFEST.MF</manifestFile>
+					</archive>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>

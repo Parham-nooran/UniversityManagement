@@ -11,13 +11,12 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 
-public class StudentSmartPart extends Application {
+public class StudentSmartPart {
 
     public static StudentRepository studentRepository;
+    public  static Stage stage;
 
-    public static void main(String[] args){
-        launch(args);
-    }
+
 
     @FXML
     private TextField firstName;
@@ -30,10 +29,10 @@ public class StudentSmartPart extends Application {
     @FXML
     private TextField nationalID;
 
-    @Override
-    public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/StudentSmartPart.fxml"));
-        stage.setScene(new Scene(root, 760, 560));
+
+    public static void start() throws Exception {
+        Parent root = FXMLLoader.load(StudentSmartPart.class.getResource("/fxml/StudentSmartPart.fxml"));
+        stage.setScene(new Scene(root));
         stage.show();
     }
 
