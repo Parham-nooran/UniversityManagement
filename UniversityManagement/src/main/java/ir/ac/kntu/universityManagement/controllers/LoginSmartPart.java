@@ -15,11 +15,6 @@ import java.util.Map;
 
 public class LoginSmartPart extends Application {
 
-    public static void main(String[] args){
-        launch(args);
-    }
-
-
     @FXML
     private TextField userName;
     @FXML
