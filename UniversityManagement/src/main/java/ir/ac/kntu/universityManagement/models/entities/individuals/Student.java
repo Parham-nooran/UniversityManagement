@@ -1,4 +1,4 @@
-package ir.ac.kntu.universityManagement.models.individuals;
+package ir.ac.kntu.universityManagement.models.entities.individuals;
 
 import lombok.*;
 
@@ -11,6 +11,9 @@ import javax.persistence.*;
 @Setter
 @Getter
 public class Student extends Person{
+    @Column(
+            name = "STUDENT_NUMBER"
+    )
     private String studentNumber;
 
     public Student(String firstName, String lastName, String email, String studentNumber) {

@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ir.ac.kntu.universityManagement.controllers.StudentSmartPart">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ir.ac.kntu.universityManagement.controllers.StudentController">
    <children>
       <MenuBar>
          <menus>
@@ -101,10 +101,10 @@
                </font>
             </Label>
             <TextField fx:id="firstName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="nationalID" editable="false" GridPane.columnIndex="1" />
+            <TextField editable="false" GridPane.columnIndex="1" />
             <TextField fx:id="lastName" GridPane.columnIndex="4" GridPane.rowIndex="1" />
             <TextField fx:id="email" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="studentID" editable="false" GridPane.columnIndex="4" />
+            <TextField editable="false" GridPane.columnIndex="4" />
             <Button mnemonicParsing="false" onMouseClicked="#saveStudent" prefHeight="51.0" prefWidth="140.0" text="Save" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="4" />
          </children>
       </GridPane>

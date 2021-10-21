@@ -1,6 +1,6 @@
-package ir.ac.kntu.universityManagement.models.departments;
+package ir.ac.kntu.universityManagement.models.entities.departments;
 
-import ir.ac.kntu.universityManagement.models.individuals.Instructor;
+import ir.ac.kntu.universityManagement.models.entities.individuals.Instructor;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 

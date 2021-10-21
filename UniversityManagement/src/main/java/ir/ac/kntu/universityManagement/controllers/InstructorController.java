@@ -1,10 +1,9 @@
 package ir.ac.kntu.universityManagement.controllers;
 
-import ir.ac.kntu.universityManagement.repositories.InstructorRepository;
-import javafx.application.Application;
+import ir.ac.kntu.universityManagement.models.repositories.InstructorRepository;
 import javafx.stage.Stage;
 
-public class InstructorSmartPart {
+public class InstructorController {
 
     public static InstructorRepository instructorRepository;
 

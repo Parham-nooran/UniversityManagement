@@ -1,6 +1,6 @@
-package ir.ac.kntu.universityManagement.repositories;
+package ir.ac.kntu.universityManagement.models.repositories;
 
-import ir.ac.kntu.universityManagement.models.individuals.Student;
+import ir.ac.kntu.universityManagement.models.entities.individuals.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
