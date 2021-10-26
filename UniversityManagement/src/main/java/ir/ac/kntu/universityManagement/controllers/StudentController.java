@@ -2,7 +2,6 @@ package ir.ac.kntu.universityManagement.controllers;
 
 import ir.ac.kntu.universityManagement.models.entities.individuals.Student;
 import ir.ac.kntu.universityManagement.models.repositories.StudentRepository;
-import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,8 +10,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.io.Resource;
 
 import java.io.IOException;
 
@@ -39,7 +36,7 @@ public class StudentController {
 
 
 
-    public  void start() throws IOException {
+    public void start() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/StudentView.fxml"));
         Parent parent = fxmlLoader.load();
         stage.setScene(new Scene(parent));
@@ -47,11 +44,13 @@ public class StudentController {
     }
 
 
-
-    public void saveStudent(){
-        studentRepository.save(new Student(this.firstName.getText(), this.lastName.getText(), this.email.getText()));
+    public void saveStudent() throws Exception {
+        if (!this.firstName.getText().equals("")&&!this.lastName.getText().equals("")&&
+                !this.email.getText().equals("")&&this.firstName.getText()!=null&&this.lastName!=null) {
+            studentRepository.save(new Student(this.firstName.getText(), this.lastName.getText(), this.email.getText()));
+        }
+            new MainPageController((Stage)firstName.getScene().getWindow()).start();
     }
-
 
 
 }

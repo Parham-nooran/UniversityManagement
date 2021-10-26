@@ -54,7 +54,7 @@ public class LoginController extends Application {
         }
         if (message.equals("")){
             System.out.println(userName.getScene().getWindow() == null);
-            new MainViewController((Stage)userName.getScene().getWindow()).start();
+            new MainPageController((Stage)userName.getScene().getWindow()).start();
         }
     }
 

@@ -23,4 +23,8 @@ public class Student extends Person{
     public Student(String firstName, String lastName, String email) {
         super(firstName, lastName, email);
     }
+
+    public String toString(){
+        return this.getFirstName() + " " + this.getLastName() + " the email is : "+ this.getEmail();
+    }
 }

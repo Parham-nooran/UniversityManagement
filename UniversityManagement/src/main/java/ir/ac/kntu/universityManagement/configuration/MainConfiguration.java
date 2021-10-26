@@ -2,6 +2,7 @@ package ir.ac.kntu.universityManagement.configuration;
 
 import ir.ac.kntu.universityManagement.controllers.InstructorController;
 import ir.ac.kntu.universityManagement.controllers.StudentController;
+import ir.ac.kntu.universityManagement.controllers.StudentsController;
 import ir.ac.kntu.universityManagement.models.repositories.InstructorRepository;
 import ir.ac.kntu.universityManagement.models.repositories.StudentRepository;
 import org.springframework.boot.CommandLineRunner;
@@ -16,6 +17,7 @@ public class MainConfiguration {
         return args -> {
             StudentController.studentRepository = studentRepository;
             InstructorController.instructorRepository = instructorRepository;
+            StudentsController.studentRepository = studentRepository;
         };
     }
 

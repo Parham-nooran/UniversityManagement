@@ -16,7 +16,7 @@ import java.io.IOException;
 
 @Setter
 @NoArgsConstructor
-public class MainViewController{
+public class MainPageController {
 
     @FXML
     private Button students;
@@ -24,16 +24,19 @@ public class MainViewController{
     private Stage stage;
 
 
-    public MainViewController(Stage stage) {
+    public MainPageController(Stage stage) {
         this.stage = stage;
     }
 
 
 
     public void goToStudents() throws IOException {
-        new StudentController((Stage)students.getScene().getWindow()).start();
+        new StudentsController((Stage)students.getScene().getWindow()).start();
     }
 
+    public void addStudent() throws IOException {
+        new StudentController((Stage)students.getScene().getWindow()).start();
+    }
 
 
     public void start() throws Exception {
