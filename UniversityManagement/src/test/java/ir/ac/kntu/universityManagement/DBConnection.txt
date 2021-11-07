@@ -1,3 +1,0 @@
-RfD2P547
-
-connect system/RfD2P547@192.168.43.15:1521/SDA
