@@ -1,0 +1,371 @@
+Index: UniversityManagement/src/main/java/ir/ac/kntu/universityManagement/models/calendar/CalendarEntry.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package ir.ac.kntu.universityManagement.models.calendar;\r\n\r\nimport com.calendarfx.model.Entry;\r\nimport com.calendarfx.model.Interval;\r\nimport lombok.Getter;\r\nimport lombok.NoArgsConstructor;\r\nimport lombok.Setter;\r\n\r\nimport javax.persistence.*;\r\n\r\n\r\n@Entity(name=\"CALENDAR_ENTRY\")\r\n@Table\r\n@NoArgsConstructor\r\n@Setter\r\n@Getter\r\npublic class CalendarEntry<T> extends Entry<T> {\r\n    @Id\r\n    @Column(\r\n            name=\"CE_ID\"\r\n    )\r\n    private Long calenderEntryId;\r\n\r\n    public CalendarEntry(Entry<T> entry) {\r\n        super(entry.getTitle(), entry.getInterval());\r\n        //super.setCalendar(entry.getCalendar());\r\n        super.setId(entry.getId());\r\n        super.setFullDay(entry.isFullDay());\r\n        super.setRecurrenceRule(entry.getRecurrenceRule());\r\n        super.setZoneId(entry.getZoneId());\r\n        super.setMinimumDuration(entry.getMinimumDuration());\r\n        this.calenderEntryId = Long.parseLong(entry.getId());\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/UniversityManagement/src/main/java/ir/ac/kntu/universityManagement/models/calendar/CalendarEntry.java b/UniversityManagement/src/main/java/ir/ac/kntu/universityManagement/models/calendar/CalendarEntry.java
+--- a/UniversityManagement/src/main/java/ir/ac/kntu/universityManagement/models/calendar/CalendarEntry.java	
++++ b/UniversityManagement/src/main/java/ir/ac/kntu/universityManagement/models/calendar/CalendarEntry.java	
+@@ -1,12 +1,14 @@
+ package ir.ac.kntu.universityManagement.models.calendar;
+ 
+ import com.calendarfx.model.Entry;
+-import com.calendarfx.model.Interval;
+ import lombok.Getter;
+ import lombok.NoArgsConstructor;
+ import lombok.Setter;
+ 
+ import javax.persistence.*;
++import java.time.Duration;
++import java.time.LocalDate;
++import java.time.LocalTime;
+ 
+ 
+ @Entity(name="CALENDAR_ENTRY")
+@@ -14,21 +16,61 @@
+ @NoArgsConstructor
+ @Setter
+ @Getter
+-public class CalendarEntry<T> extends Entry<T> {
++public class CalendarEntry<T> {
+     @Id
+     @Column(
+-            name="CE_ID"
++            name="ID"
+     )
+-    private Long calenderEntryId;
++    private Long id;
++
++    private EntryType entryType;
++
++    private String title;
++
++    private LocalDate startDate;
++
++    private LocalTime startTime;
++
++    private LocalDate endDate;
++
++    private LocalTime endTime;
++
++
++    //private ZoneId zoneId;
++
++    private Boolean isFUllDay;
++
++    private String recurrenceRule;
++
++    private Duration minimumDuration;
++
++    private String location;
+ 
+     public CalendarEntry(Entry<T> entry) {
+-        super(entry.getTitle(), entry.getInterval());
+-        //super.setCalendar(entry.getCalendar());
+-        super.setId(entry.getId());
+-        super.setFullDay(entry.isFullDay());
+-        super.setRecurrenceRule(entry.getRecurrenceRule());
+-        super.setZoneId(entry.getZoneId());
+-        super.setMinimumDuration(entry.getMinimumDuration());
+-        this.calenderEntryId = Long.parseLong(entry.getId());
++        this.id = Long.parseLong(entry.getId());
++        setEntryType(entry);
++        this.title = entry.getTitle();
++        this.startDate = entry.getStartDate();
++        this.startTime = entry.getStartTime();
++        this.endDate = entry.getEndDate();
++        this.endTime = entry.getEndTime();
++        this.isFUllDay = entry.isFullDay();
++        this.recurrenceRule = entry.getRecurrenceRule();
++        this.minimumDuration = entry.getMinimumDuration();
++        this.location = entry.getLocation();
+     }
++
++    private void setEntryType(Entry<T> entry){
++        if(entry.getCalendar() != null) {
++            switch (entry.getCalendar().getName()) {
++                case "Course Registration":
++                    this.entryType = EntryType.CourseRegistration;
++                    break;
++                case "Instructors Evaluation":
++                    this.entryType = EntryType.InstructorsEvaluation;
++                    break;
++            }
++        }
++    }
++
+ }
+Index: UniversityManagement/src/main/java/ir/ac/kntu/universityManagement/models/repositories/calendar/CalendarEntryRepository.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package ir.ac.kntu.universityManagement.models.repositories.calendar;\r\n\r\nimport ir.ac.kntu.universityManagement.models.calendar.CalendarEntry;\r\nimport org.springframework.data.jpa.repository.JpaRepository;\r\n\r\npublic interface CalendarEntryRepository extends JpaRepository<CalendarEntry, Long> {\r\n\r\n}\r\n
+===================================================================
+diff --git a/UniversityManagement/src/main/java/ir/ac/kntu/universityManagement/models/repositories/calendar/CalendarEntryRepository.java b/UniversityManagement/src/main/java/ir/ac/kntu/universityManagement/models/repositories/calendar/CalendarEntryRepository.java
+--- a/UniversityManagement/src/main/java/ir/ac/kntu/universityManagement/models/repositories/calendar/CalendarEntryRepository.java	
++++ b/UniversityManagement/src/main/java/ir/ac/kntu/universityManagement/models/repositories/calendar/CalendarEntryRepository.java	
+@@ -2,7 +2,10 @@
+ 
+ import ir.ac.kntu.universityManagement.models.calendar.CalendarEntry;
+ import org.springframework.data.jpa.repository.JpaRepository;
++import org.springframework.stereotype.Repository;
+ 
++@Repository
+ public interface CalendarEntryRepository extends JpaRepository<CalendarEntry, Long> {
+ 
++    void deleteByCalenderEntryId(Long id);
+ }
+Index: UniversityManagement/src/main/java/ir/ac/kntu/universityManagement/controllers/managers/UniversityCalendarController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package ir.ac.kntu.universityManagement.controllers.managers;\r\nimport com.calendarfx.model.Calendar;\r\nimport com.calendarfx.model.CalendarSource;\r\nimport com.calendarfx.model.Entry;\r\nimport com.calendarfx.view.CalendarView;\r\nimport ir.ac.kntu.universityManagement.controllers.general.BaseController;\r\nimport ir.ac.kntu.universityManagement.models.calendar.CalendarEntry;\r\nimport ir.ac.kntu.universityManagement.models.repositories.calendar.CalendarEntryRepository;\r\nimport javafx.application.Platform;\r\nimport javafx.fxml.FXML;\r\nimport javafx.fxml.Initializable;\r\nimport javafx.scene.Scene;\r\nimport lombok.NoArgsConstructor;\r\nimport java.net.URL;\r\nimport java.time.LocalDate;\r\nimport java.time.LocalTime;\r\nimport java.util.Iterator;\r\nimport java.util.List;\r\nimport java.util.ResourceBundle;\r\nimport java.util.Set;\r\nimport java.util.stream.Collectors;\r\n\r\n\r\n@NoArgsConstructor\r\npublic class UniversityCalendarController extends BaseController implements Initializable {\r\n\r\n\r\n    @FXML\r\n    private CalendarView calendarView;\r\n\r\n    public static List<CalendarEntry> calendarEntries;\r\n    public static CalendarEntryRepository calendarEntryRepository;\r\n\r\n    private static Calendar courseRegistration;\r\n    private static Calendar instructorsEvaluation;\r\n\r\n    public UniversityCalendarController(Scene scene) {\r\n        super(\"UniversityCalendar\", scene);\r\n    }\r\n\r\n    @Override\r\n    public void initialize(URL url, ResourceBundle resourceBundle) {\r\n\r\n        courseRegistration = new Calendar(\"Course Registration\");\r\n        instructorsEvaluation = new Calendar(\"Instructors Evaluation\");\r\n\r\n        courseRegistration.setStyle(Calendar.Style.STYLE1);\r\n        instructorsEvaluation.setStyle(Calendar.Style.STYLE2);\r\n\r\n        CalendarSource myCalendarSource = new CalendarSource(\"My Calendars\");\r\n\r\n        myCalendarSource.getCalendars().addAll(courseRegistration);\r\n        myCalendarSource.getCalendars().addAll(instructorsEvaluation);\r\n\r\n        calendarEntries = calendarEntryRepository.findAll();\r\n\r\n        Iterator<? extends Entry<?>> entryIterator = calendarEntries.stream().map(calendarEntry -> (Entry<?>)calendarEntry).\r\n                collect(Collectors.toList()).iterator();\r\n\r\n        //courseRegistration.addEntries((Iterator<Entry<?>>) entryIterator);\r\n//        instructorsEvaluation.addEntries(entries.stream().filter(calendarEntry ->\r\n//                calendarEntry.getCalendar().equals(instructorsEvaluation)));\r\n\r\n\r\n        courseRegistration.addEventHandler(calendarEvent -> {\r\n            if(calendarEvent.isEntryAdded()){\r\n                System.out.println(calendarEvent.getEntry());\r\n                calendarEntryRepository.save(new CalendarEntry(calendarEvent.getEntry()));\r\n\r\n            } else if(calendarEvent.isEntryRemoved()) {\r\n                System.out.println(calendarEvent.getEntry());\r\n            }\r\n        });\r\n\r\n        instructorsEvaluation.addEventHandler(calendarEvent -> {\r\n            if(calendarEvent.isEntryAdded()){\r\n                System.out.println(calendarEvent.getEntry());\r\n            } else if(calendarEvent.isEntryRemoved()) {\r\n                System.out.println(calendarEvent.getEntry());\r\n            }\r\n        });\r\n\r\n        calendarView.getCalendarSources().addAll(myCalendarSource);\r\n\r\n        calendarView.setRequestedTime(LocalTime.now());\r\n\r\n        Thread updateTimeThread = new Thread(\"Calendar: Update Time Thread\") {\r\n            @Override\r\n            public void run() {\r\n                while (true) {\r\n                    Platform.runLater(() -> {\r\n                        calendarView.setToday(LocalDate.now());\r\n                        calendarView.setTime(LocalTime.now());\r\n                    });\r\n                    try {\r\n                        sleep(5000);\r\n                    } catch (InterruptedException e) {\r\n                        e.printStackTrace();\r\n                    }\r\n                }\r\n            }\r\n        };\r\n        updateTimeThread.setPriority(Thread.MIN_PRIORITY);\r\n        updateTimeThread.setDaemon(true);\r\n        updateTimeThread.start();\r\n    }\r\n\r\n//    public static void fillCalenderEntries(){\r\n//        new Thread(() -> {\r\n//            entries = calendarEntryRepository.findAll();\r\n//        }).start();\r\n//    }\r\n}\r\n
+===================================================================
+diff --git a/UniversityManagement/src/main/java/ir/ac/kntu/universityManagement/controllers/managers/UniversityCalendarController.java b/UniversityManagement/src/main/java/ir/ac/kntu/universityManagement/controllers/managers/UniversityCalendarController.java
+--- a/UniversityManagement/src/main/java/ir/ac/kntu/universityManagement/controllers/managers/UniversityCalendarController.java	
++++ b/UniversityManagement/src/main/java/ir/ac/kntu/universityManagement/controllers/managers/UniversityCalendarController.java	
+@@ -1,38 +1,45 @@
+ package ir.ac.kntu.universityManagement.controllers.managers;
++
+ import com.calendarfx.model.Calendar;
+ import com.calendarfx.model.CalendarSource;
+-import com.calendarfx.model.Entry;
+ import com.calendarfx.view.CalendarView;
+ import ir.ac.kntu.universityManagement.controllers.general.BaseController;
+ import ir.ac.kntu.universityManagement.models.calendar.CalendarEntry;
++import ir.ac.kntu.universityManagement.models.calendar.EntryType;
+ import ir.ac.kntu.universityManagement.models.repositories.calendar.CalendarEntryRepository;
+ import javafx.application.Platform;
+ import javafx.fxml.FXML;
+ import javafx.fxml.Initializable;
+ import javafx.scene.Scene;
++import javafx.scene.control.Button;
+ import lombok.NoArgsConstructor;
++import org.springframework.transaction.annotation.Transactional;
++
+ import java.net.URL;
+ import java.time.LocalDate;
+ import java.time.LocalTime;
+-import java.util.Iterator;
+ import java.util.List;
+ import java.util.ResourceBundle;
+-import java.util.Set;
+ import java.util.stream.Collectors;
+ 
+ 
+ @NoArgsConstructor
++@Transactional
+ public class UniversityCalendarController extends BaseController implements Initializable {
+ 
+ 
+     @FXML
+     private CalendarView calendarView;
++    @FXML private Button goBackToHomePage;
++    @FXML private Button save;
+ 
+     public static List<CalendarEntry> calendarEntries;
+     public static CalendarEntryRepository calendarEntryRepository;
+ 
+-    private static Calendar courseRegistration;
+-    private static Calendar instructorsEvaluation;
++    private static final Calendar courseRegistration = new Calendar("Course Registration");
++    private static final Calendar instructorsEvaluation = new Calendar("Instructors Evaluation");
++    public static Boolean isUpToDate = false;
++
+ 
+     public UniversityCalendarController(Scene scene) {
+         super("UniversityCalendar", scene);
+@@ -41,47 +48,58 @@
+     @Override
+     public void initialize(URL url, ResourceBundle resourceBundle) {
+ 
+-        courseRegistration = new Calendar("Course Registration");
+-        instructorsEvaluation = new Calendar("Instructors Evaluation");
++        courseRegistration.setStyle(Calendar.Style.STYLE2);
++        instructorsEvaluation.setStyle(Calendar.Style.STYLE3);
+ 
+-        courseRegistration.setStyle(Calendar.Style.STYLE1);
+-        instructorsEvaluation.setStyle(Calendar.Style.STYLE2);
++        System.out.println(courseRegistration);
+ 
+-        CalendarSource myCalendarSource = new CalendarSource("My Calendars");
++        refreshCalendarEntries();
+ 
+-        myCalendarSource.getCalendars().addAll(courseRegistration);
+-        myCalendarSource.getCalendars().addAll(instructorsEvaluation);
++        CalendarSource myCalendarSource = new CalendarSource("University Calendars");
+ 
+-        calendarEntries = calendarEntryRepository.findAll();
++        myCalendarSource.getCalendars().clear();
++        myCalendarSource.getCalendars().addAll(courseRegistration, instructorsEvaluation);
+ 
+-        Iterator<? extends Entry<?>> entryIterator = calendarEntries.stream().map(calendarEntry -> (Entry<?>)calendarEntry).
+-                collect(Collectors.toList()).iterator();
+ 
+-        //courseRegistration.addEntries((Iterator<Entry<?>>) entryIterator);
+-//        instructorsEvaluation.addEntries(entries.stream().filter(calendarEntry ->
+-//                calendarEntry.getCalendar().equals(instructorsEvaluation)));
+-
++        calendarView.setShowAddCalendarButton(false);
+ 
+         courseRegistration.addEventHandler(calendarEvent -> {
+             if(calendarEvent.isEntryAdded()){
+-                System.out.println(calendarEvent.getEntry());
+-                calendarEntryRepository.save(new CalendarEntry(calendarEvent.getEntry()));
+-
++                CalendarEntry calendarEntry = new CalendarEntry(calendarEvent.getEntry());
++                new Thread(() -> calendarEntryRepository.save(calendarEntry)).start();
++                calendarEntries.add(calendarEntry);
+             } else if(calendarEvent.isEntryRemoved()) {
+-                System.out.println(calendarEvent.getEntry());
++
++            } else {
++
++
+             }
+         });
+ 
+         instructorsEvaluation.addEventHandler(calendarEvent -> {
+             if(calendarEvent.isEntryAdded()){
+-                System.out.println(calendarEvent.getEntry());
++                calendarEntryRepository.save(new CalendarEntry(calendarEvent.getEntry()));
+             } else if(calendarEvent.isEntryRemoved()) {
+-                System.out.println(calendarEvent.getEntry());
++                calendarEntryRepository.deleteById(Long.parseLong(calendarEvent.getEntry().getId()));
+             }
+         });
++
++        if(save != null){
++            save.setOnAction((ActionEvent) -> {
++                try {
++                    for(CalendarEntry calendarEntry:calendarEntries){
++                        System.out.println(calendarEntry);
++                        calendarEntryRepository.save(calendarEntry);
++                    }
++                } catch (Exception e) {
++                    e.printStackTrace();
++                }
++            });
++        }
+ 
+         calendarView.getCalendarSources().addAll(myCalendarSource);
+ 
++
+         calendarView.setRequestedTime(LocalTime.now());
+ 
+         Thread updateTimeThread = new Thread("Calendar: Update Time Thread") {
+@@ -93,7 +111,7 @@
+                         calendarView.setTime(LocalTime.now());
+                     });
+                     try {
+-                        sleep(5000);
++                        sleep(4000);
+                     } catch (InterruptedException e) {
+                         e.printStackTrace();
+                     }
+@@ -103,11 +121,39 @@
+         updateTimeThread.setPriority(Thread.MIN_PRIORITY);
+         updateTimeThread.setDaemon(true);
+         updateTimeThread.start();
++        if(goBackToHomePage != null) {
++            goBackToHomePage.setOnAction((ActionEvent) -> {
++                try {
++                    goBackToHomePage(calendarView.getScene());
++                } catch (Exception e) {
++                    e.printStackTrace();
++                }
++            });
++        }
++    }
++
++    public static void fillCalenderEntries(){
++        new Thread(() -> {
++            calendarEntries = calendarEntryRepository.findAll();
++            isUpToDate = true;
++        }).start();
+     }
+ 
+-//    public static void fillCalenderEntries(){
+-//        new Thread(() -> {
+-//            entries = calendarEntryRepository.findAll();
+-//        }).start();
+-//    }
++    private void refreshCalendarEntries(){
++        if(calendarEntries != null && isUpToDate){
++            insertEvents();
++        } else{
++            new Thread(() -> {
++            calendarEntries = calendarEntryRepository.findAll();
++            isUpToDate = true;
++            }).start();
++        }
++    }
++
++    private void insertEvents(){
++        if(calendarEntries != null) {
++
++        }
++    }
++
+ }
+Index: UniversityManagement/src/main/resources/fxml/UniversityCalendarView.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import com.calendarfx.view.CalendarView?>\r\n<?import javafx.scene.layout.BorderPane?>\r\n\r\n<BorderPane maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"600.0\" prefWidth=\"800.0\" xmlns=\"http://javafx.com/javafx/16\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"ir.ac.kntu.universityManagement.controllers.managers.UniversityCalendarController\">\r\n   <center>\r\n      <CalendarView fx:id=\"calendarView\" BorderPane.alignment=\"CENTER\" />\r\n   </center>\r\n</BorderPane>\r\n
+===================================================================
+diff --git a/UniversityManagement/src/main/resources/fxml/UniversityCalendarView.fxml b/UniversityManagement/src/main/resources/fxml/UniversityCalendarView.fxml
+--- a/UniversityManagement/src/main/resources/fxml/UniversityCalendarView.fxml	
++++ b/UniversityManagement/src/main/resources/fxml/UniversityCalendarView.fxml	
+@@ -1,10 +1,54 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
+ <?import com.calendarfx.view.CalendarView?>
++<?import javafx.geometry.Insets?>
++<?import javafx.scene.control.Button?>
++<?import javafx.scene.image.Image?>
++<?import javafx.scene.image.ImageView?>
++<?import javafx.scene.layout.AnchorPane?>
+ <?import javafx.scene.layout.BorderPane?>
++<?import javafx.scene.text.Font?>
+ 
+ <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ir.ac.kntu.universityManagement.controllers.managers.UniversityCalendarController">
+    <center>
+       <CalendarView fx:id="calendarView" BorderPane.alignment="CENTER" />
+    </center>
++   <left>
++      <AnchorPane prefHeight="600.0" prefWidth="191.0" BorderPane.alignment="CENTER">
++         <children>
++            <AnchorPane fx:id="anchorPane1" prefHeight="700.0" prefWidth="173.0">
++               <children>
++                  <Button fx:id="goBackToHomePage" graphicTextGap="10.0" layoutX="13.0" layoutY="120.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="158.0" text="Home Page">
++                     <graphic>
++                        <ImageView fitHeight="30.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
++                           <image>
++                              <Image url="@../icons/About/Home.png" />
++                           </image>
++                        </ImageView>
++                     </graphic>
++                     <font>
++                        <Font name="Arial Rounded MT Bold" size="17.0" />
++                     </font>
++                     <padding>
++                        <Insets right="10.0" />
++                     </padding>
++                  </Button>
++                  <ImageView fitHeight="56.0" fitWidth="176.0" layoutX="7.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
++                     <image>
++                        <Image url="@../icons/GeneralIcons/UniversityManagementLogoIcon.jpg" />
++                     </image>
++                  </ImageView>
++                  <Button fx:id="save" graphicTextGap="10.0" layoutX="16.0" layoutY="208.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="158.0" text="Save Changes">
++                     <font>
++                        <Font name="Arial Rounded MT Bold" size="17.0" />
++                     </font>
++                     <padding>
++                        <Insets right="10.0" />
++                     </padding>
++                  </Button>
++               </children>
++            </AnchorPane>
++         </children>
++      </AnchorPane>
++   </left>
+ </BorderPane>

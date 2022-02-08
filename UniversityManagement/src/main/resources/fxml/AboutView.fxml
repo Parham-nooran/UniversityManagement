@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ir.ac.kntu.universityManagement.controllers.general.AboutController">
+   <center>
+      <AnchorPane fx:id="anchorPane3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1500.0">
+         <children>
+            <AnchorPane fx:id="anchorPane2" layoutX="300.0" prefHeight="700.0" prefWidth="1200.0">
+               <children>
+                  <Label fx:id="aboutUsHeader" alignment="CENTER" layoutX="247.0" layoutY="5.0" prefHeight="46.0" prefWidth="440.0" text="About Us" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0">
+                     <font>
+                        <Font name="Georgia Bold Italic" size="46.0" />
+                     </font>
+                  </Label>
+                  <MenuButton fx:id="menuButton" alignment="CENTER" layoutX="872.0" layoutY="12.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="150.0" AnchorPane.rightAnchor="50.0">
+                     <items>
+                        <MenuItem fx:id="logOut" mnemonicParsing="false" text="LogOut" />
+                     </items>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/HomePageIcons/UserIcon.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="Georgia Bold Italic" size="12.0" />
+                     </font>
+                  </MenuButton>
+                  <AnchorPane fx:id="anchorPane4" layoutX="561.0" layoutY="69.0" prefHeight="574.0" prefWidth="589.0" AnchorPane.leftAnchor="561.0" AnchorPane.rightAnchor="50.0">
+                     <children>
+                        <Label fx:id="aboutUsPhoneNumber" layoutX="239.0" layoutY="522.0" prefHeight="42.0" prefWidth="288.0" text="Phone : 09351105338" AnchorPane.leftAnchor="239.0" />
+                        <Label fx:id="aboutUsEmail" layoutX="239.0" layoutY="466.0" prefHeight="50.0" prefWidth="283.0" text="Email : adelmirsharji87@gmail.com" AnchorPane.rightAnchor="67.0" />
+                        <Label fx:id="aboutUsAppName" alignment="CENTER" layoutX="96.0" prefHeight="58.0" prefWidth="310.0" style="-fx-background-color: #e3bb9f70; -fx-background-radius: 100;" text=" University Management V1.1" AnchorPane.leftAnchor="96.0" AnchorPane.rightAnchor="96.00000000000011">
+                           <font>
+                              <Font name="Georgia Italic" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="aboutAppHeader" layoutX="20.0" layoutY="85.0" prefHeight="19.0" prefWidth="550.0" text="you can use this software to:" />
+                        <TextArea fx:id="textArea" editable="false" layoutX="20.0" layoutY="117.0" prefHeight="345.0" prefWidth="549.0" text="1-Manage users: &#10;Add users, Set their roles, Delete a user &#10;&#10;2-Manage courses: &#10;See your current semester courses as a student or instructor,&#10;Manage courses as Admin to add,delete or edit a course&#10;&#10;3-Manage students: &#10;Add,delete or edit entered students, view all university students&#10;&#10;4-Manage instructors: &#10;Add,delete or edit entered instructors, view all university instructors &#10;&#10;5-Manage faculties: &#10;Add,delete or edit entered faculties, view all university faculties" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                           <font>
+                              <Font name="Georgia Italic" size="14.0" />
+                           </font></TextArea>
+                        <ImageView fitHeight="86.0" fitWidth="90.0" layoutX="115.0" layoutY="473.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/About/Contact.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <ImageView fitHeight="538.0" fitWidth="566.0" layoutX="14.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/About/AboutUs.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="anchorPane1" prefHeight="700.0" prefWidth="300.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Button fx:id="homePageButton" graphicTextGap="10.0" layoutX="15.0" layoutY="150.0" mnemonicParsing="false" onMouseClicked="#goBack" prefHeight="100.0" prefWidth="270.0" text="Home Page">
+                     <graphic>
+                        <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/About/Home.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets right="11.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="aboutUsButton" graphicTextGap="10.0" layoutX="15.0" layoutY="250.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="270.0" text="About Us" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/About/aboutIcon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets left="5.0" right="28.0" />
+                     </padding>
+                  </Button>
+                  <Label fx:id="universityManagementHeader" alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="25.0" prefHeight="100.0" prefWidth="270.0" text="University&#10;Management" textAlignment="CENTER" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ir.ac.kntu.universityManagement.controllers.deleters.DeleteInstructorController">
+   <center>
+      <AnchorPane fx:id="anchorPane3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1500.0">
+         <children>
+            <AnchorPane fx:id="anchorPane1" prefHeight="700.0" prefWidth="300.0">
+               <children>
+                  <Button fx:id="goBackToHomePage" graphicTextGap="30.0" layoutX="15.0" layoutY="150.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="270.0" text="Home Page">
+                     <graphic>
+                        <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/About/Home.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets right="40.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="goToInstructorManagement" graphicTextGap="10.0" layoutX="15.0" layoutY="250.5" mnemonicParsing="false" prefHeight="100.0" prefWidth="270.0" text="Add Instructor">
+                     <graphic>
+                        <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/instructorManagement/AddInstructor.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets left="5.0" right="9.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="goToEditInstructor" graphicTextGap="10.0" layoutX="15.0" layoutY="351.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="270.0" text="Edit Instructor">
+                     <graphic>
+                        <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/instructorManagement/EditInstructor.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets right="9.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="selected" graphicTextGap="10.0" layoutX="15.0" layoutY="451.5" mnemonicParsing="false" prefHeight="100.0" prefWidth="270.0" text="Delete Instructor" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/instructorManagement/DeleteInstructor.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="10.0" right="6.0" />
+                     </padding>
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="17.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="gotoViewAllInstructors" graphicTextGap="10.0" layoutX="15.0" layoutY="552.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="270.0" text="View Instructors">
+                     <graphic>
+                        <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/instructorManagement/ViewAllInstructors.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets right="6.0" />
+                     </padding>
+                  </Button>
+                  <Label fx:id="universityManagementHeader" alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="27.0" prefHeight="100.0" prefWidth="270.0" text="University&#10;Management" textAlignment="CENTER">
+                     <font>
+                        <Font name="Forte" size="39.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="anchorPane2" layoutX="300.0" prefHeight="700.0" prefWidth="1200.0">
+               <children>
+                  <TextField fx:id="instructorSearchBox" layoutX="36.0" layoutY="63.0" prefHeight="26.0" prefWidth="162.0" promptText="Search in Instructor Table" AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="90.0">
+                     <font>
+                        <Font name="Georgia Italic" size="11.0" />
+                     </font>
+                  </TextField>
+                  <Label fx:id="instructorManagementHeader" alignment="CENTER" layoutX="214.0" layoutY="5.0" prefHeight="46.0" prefWidth="518.0" text="Instructor Management" textAlignment="CENTER" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0">
+                     <font>
+                        <Font name="Georgia Bold Italic" size="40.0" />
+                     </font>
+                  </Label>
+                  <MenuButton fx:id="menuButton" alignment="CENTER" layoutX="872.0" layoutY="12.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="150.0" AnchorPane.rightAnchor="50.0">
+                     <items>
+                        <MenuItem fx:id="logOut" mnemonicParsing="false" text="Logout" />
+                     </items>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/GeneralIcons/UserIcon.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="Georgia Bold Italic" size="12.0" />
+                     </font>
+                  </MenuButton>
+                  <Button fx:id="delete" layoutY="622.0" mnemonicParsing="false" onMouseClicked="#delete" prefHeight="46.0" prefWidth="150.0" text="Delete" textFill="WHITE" AnchorPane.leftAnchor="480.0" AnchorPane.rightAnchor="480.0">
+                     <font>
+                        <Font name="Georgia Bold Italic" size="19.0" />
+                     </font>
+                  </Button>
+                  <ComboBox fx:id="instructorSearchBy" layoutX="50.0" layoutY="63.0" prefHeight="25.0" prefWidth="100.0" promptText="Search by" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="90.0" />
+                  <TableView fx:id="instructorTableView" layoutX="100.0" layoutY="131.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="456.0" prefWidth="1000.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0">
+                     <columns>
+                        <TableColumn fx:id="instructorId" prefWidth="92.00006103515625" text="Instructor ID" />
+                        <TableColumn fx:id="instructorFirstName" prefWidth="76.79998779296875" text="FirstName" />
+                        <TableColumn fx:id="instructorLastName" prefWidth="99.33332824707031" text="LastName" />
+                        <TableColumn fx:id="instructorNationalId" prefWidth="95.20001220703125" text="National ID" />
+                        <TableColumn fx:id="instructorUserInfo" prefWidth="95.20001220703125" text="Username" />
+                        <TableColumn fx:id="instructorPhoneNumber" prefWidth="101.60000610351562" text="PhoneNumber" />
+                        <TableColumn fx:id="instructorEmail" prefWidth="81.5999755859375" text="Email" />
+                        <TableColumn fx:id="instructorAddress" prefWidth="113.5999755859375" text="Address" />
+                        <TableColumn fx:id="instructorFaculty" minWidth="0.0" prefWidth="62.4000244140625" text="Faculty" />
+                        <TableColumn fx:id="instructorBirthdate" prefWidth="75.199951171875" text="Birthdate" />
+                        <TableColumn fx:id="instructorEntranceDate" prefWidth="104.0" text="Entrance Date" />
+                     </columns>
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </TableView>
+                  <AnchorPane fx:id="areYouSure" layoutX="267.0" layoutY="250.0" prefHeight="200.0" prefWidth="723.0" visible="false" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="277.0">
+                     <children>
+                        <Label fx:id="youSure" alignment="CENTER" layoutX="85.0" layoutY="14.0" prefHeight="100.0" prefWidth="385.0" text="Are you sure?" textAlignment="CENTER" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0">
+                           <font>
+                              <Font name="Georgia Bold Italic" size="50.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="no" layoutX="64.0" layoutY="135.0" mnemonicParsing="false" onMouseClicked="#no" prefHeight="40.0" prefWidth="155.0" text="NO" AnchorPane.leftAnchor="100.0">
+                           <font>
+                              <Font name="Georgia Bold Italic" size="17.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="yes" layoutX="308.0" layoutY="135.0" mnemonicParsing="false" onMouseClicked="#deleteInstructor" prefHeight="40.0" prefWidth="155.0" text="YES" AnchorPane.rightAnchor="100.0">
+                           <font>
+                              <Font name="Georgia Bold Italic" size="17.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <Button fx:id="refreshTablesButton" layoutX="101.0" layoutY="33.0" mnemonicParsing="false" onMouseClicked="#setRefreshTables" prefHeight="35.0" prefWidth="197.0" text="Refresh Tables">
+                     <font>
+                        <Font name="Georgia Italic" size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

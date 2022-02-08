@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: ir.ac.kntu.universityManagement.UniversityManagementApplicat
+ ion
+

@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a2314860-ff1f-46d5-8aa2-ae6531d37180" name="Changes" comment="Before pull">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniversityManagement/src/main/java/ir/ac/kntu/universityManagement/controllers/general/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/UniversityManagement/src/main/java/ir/ac/kntu/universityManagement/controllers/general/SettingsController.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="FxmlFile" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Parham" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/UniversityManagement/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/UniversityManagement/src/main/java/ir/ac/kntu/universityManagement/controllers/managers/CoursesRegistrationController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/UniversityManagement/src/main/resources/application.properties" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/UniversityManagement/src/main/java/ir/ac/kntu/universityManagement/controllers/general/BaseController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/UniversityManagement/src/main/java/ir/ac/kntu/universityManagement/controllers/general/HomePageController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/UniversityManagement/src/main/java/ir/ac/kntu/universityManagement/controllers/general/PersonalInfoController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/UniversityManagement/src/main/java/ir/ac/kntu/universityManagement/controllers/general/FreeTimeDeclarationController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/UniversityManagement/src/main/java/ir/ac/kntu/universityManagement/controllers/general/LoginController.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="JPA Structure" value="true" />
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="JPA Structure" value="false" />
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectId" id="22Pf888MrksADTi3UMCBhbhUbGe" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/UniversityManagement/src/view-11.10.1.jar" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.18159205" />
+    <property name="project.structure.side.proportion" value="0.36820653" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Parham\Downloads\Documents\universitymanagement\UniversityManagement\src" />
+      <recent name="C:\Users\Parham\Downloads\Documents\universitymanagement\UniversityManagement\src\main\resources\fxml" />
+      <recent name="C:\Users\Parham\Downloads\Documents\universitymanagement\UniversityManagement\src\main\java\ir\ac\kntu\universityManagement\controllers\general" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn -U idea:idea" />
+      <command value="mvn install:install-file \    -Dfile=&lt;C:\Users\Parham\Downloads\Documents\universitymanagement\UniversityManagement\src\view-11.10.1.jar&gt; \    -DgroupId=&lt;com.calendarfx&gt; \    -DartifactId=&lt;calendar&gt; \    -Dversion=&lt;11.10.1&gt; \    -Dpackaging=&lt;jar&gt; \    -DgeneratePom=true" />
+      <command value="mvn install:install-file \    -Dfile=&lt;src\view-11.10.1.jar&gt; \    -DgroupId=&lt;com.calendarfx&gt; \    -DartifactId=&lt;calendar&gt; \    -Dversion=&lt;11.10.1&gt; \    -Dpackaging=&lt;jar&gt; \    -DgeneratePom=true" />
+      <command value="mvn install:install-file \    -Dfile=src\view-11.10.1.jar \    -DgroupId=&lt;com.calendarfx&gt; \    -DartifactId=&lt;calendar&gt; \    -Dversion=&lt;11.10.1&gt; \    -Dpackaging=&lt;jar&gt; \    -DgeneratePom=true" />
+      <command value="mvn install:install-file \    -Dfile=src\view-11.10.1.jar \    -DgroupId=com.calendarfx \    -DartifactId=calendar \    -Dversion=11.10.1 \    -Dpackaging=jar \    -DgeneratePom=true" />
+      <command value="mvn install:install-file -Dfile=src\view-11.10.1.jar -DgroupId=com.calendarfx -DartifactId=calendar -Dversion=11.10.1 -Dpackaging=jar -DgeneratePom=true" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.UniversityManagementApplication">
+    <configuration name="UniversityManagementApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ir.ac.kntu.universityManagement.UniversityManagementApplication" />
+      <module name="UniversityManagement" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ir.ac.kntu.universityManagement.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name=".mvn" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name=".mvn" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UniversityManagementApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="UniversityManagement" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ir.ac.kntu.universityManagement.UniversityManagementApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.UniversityManagementApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a2314860-ff1f-46d5-8aa2-ae6531d37180" name="Changes" comment="" />
+      <created>1639743983884</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1639743983884</updated>
+      <workItem from="1639895049819" duration="2810000" />
+      <workItem from="1639909099641" duration="6589000" />
+      <workItem from="1639921034118" duration="4050000" />
+      <workItem from="1639929946375" duration="14856000" />
+      <workItem from="1640155111815" duration="5278000" />
+      <workItem from="1640176944891" duration="4922000" />
+      <workItem from="1640331274790" duration="16750000" />
+      <workItem from="1640364621236" duration="10284000" />
+      <workItem from="1640429307894" duration="1230000" />
+      <workItem from="1640434062597" duration="1798000" />
+      <workItem from="1640445700032" duration="13660000" />
+      <workItem from="1640494324698" duration="6746000" />
+      <workItem from="1640516003258" duration="407000" />
+      <workItem from="1640516946761" duration="3291000" />
+      <workItem from="1640606776839" duration="18369000" />
+      <workItem from="1640666298359" duration="12144000" />
+      <workItem from="1640806611472" duration="6369000" />
+      <workItem from="1640814806479" duration="164000" />
+      <workItem from="1640835283355" duration="13005000" />
+    </task>
+    <task id="LOCAL-00001" summary="Resolve duplicate adding, Resolve logOut method problem, Do some refactoring">
+      <created>1639751094592</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1639751094623</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add scheduling">
+      <created>1639758753462</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1639758753462</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add scheduling for courses">
+      <created>1639831524207</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1639831524207</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add event package">
+      <created>1640069382912</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1640069382912</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Merge Parham and master">
+      <created>1640194602876</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1640194602876</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Add course registration">
+      <created>1640197561611</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1640197561611</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Merge 'Parham' into master">
+      <created>1640699277627</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1640699277627</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Complete Event Management system">
+      <created>1640714315416</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1640714315416</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Add free time declaration system for instructors and its readonly system for managers, Correct  UniversityCalendarController">
+      <created>1640784008046</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1640784008046</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Resolve problems with Event Management System, Add controllers for saving settings locally">
+      <created>1640804219262</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1640804219262</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Resolve UM Calendar issues, Add search for co/prerequisites">
+      <created>1640866618880</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1640866618880</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Merge 'Parham' and 'Adel'">
+      <created>1640868180480</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1640868180480</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Resolve problems with search">
+      <created>1640870364558</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1640870364558</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Resolve problems with settings">
+      <created>1640883712122</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1640883712122</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Before pull">
+      <created>1640887112676</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1640887112677</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Before pull">
+      <created>1640887558563</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1640887558563</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Resolve duplicate adding, Resolve logOut method problem, Do some refactoring" />
+    <MESSAGE value="Add scheduling" />
+    <MESSAGE value="Add scheduling for courses" />
+    <MESSAGE value="Add event package" />
+    <MESSAGE value="Merge Parham and master" />
+    <MESSAGE value="Add course registration" />
+    <MESSAGE value="Merge 'Parham' into master" />
+    <MESSAGE value="Complete Event Management system" />
+    <MESSAGE value="Add free time declaration system for instructors and its readonly system for managers, Correct  UniversityCalendarController" />
+    <MESSAGE value="Resolve problems with Event Management System, Add controllers for saving settings locally" />
+    <MESSAGE value="Resolve UM Calendar issues, Add search for co/prerequisites" />
+    <MESSAGE value="Merge 'Parham' and 'Adel'" />
+    <MESSAGE value="Resolve problems with search" />
+    <MESSAGE value="Resolve problems with settings" />
+    <MESSAGE value="Before pull" />
+    <option name="LAST_COMMIT_MESSAGE" value="Before pull" />
+  </component>
+</project>

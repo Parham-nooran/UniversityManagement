@@ -1,0 +1,638 @@
+.root{
+    -fx-background-color: #616769;
+}
+
+#textArea{
+    -fx-background-color:    #1a93d5,  #1a93d5;
+	-fx-text-fill:white;
+	
+}
+
+#textArea .content {
+    -fx-background-color:   #1a93d5;
+	-fx-text-fill:white;
+	
+}
+
+#textArea:focused .content {
+    -fx-background-color:   #1a93d5;
+	-fx-text-fill:white;
+	
+}
+
+/*table view*/
+.table-view {
+    -fx-background-color: transparent;
+    -fx-font-family: Arial Rounded MT ;
+    -fx-text-background-color: #FFFFFF;
+}
+.table-cell {
+    -fx-alignment: center;
+}
+.table-view .column-header-background .filler {
+    -fx-background-color: transparent;
+
+}
+.table-view .corner {
+    -fx-background-color: transparent;
+
+}
+.table-view .column-header-background{
+    -fx-font-family: Georgia;
+    -fx-font-style: Bold Italic;
+    -fx-text-background-color: #FFFFFF;
+    -fx-background-color: linear-gradient(to bottom, #1a93d5,  #1a93d566);
+    -fx-background-radius: 12px 12px 0px 0px;
+	-fx-padding: 5px;
+}
+
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+.table-view .table-cell{
+    -fx-border-color: transparent;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #1a93d555;
+    -fx-text-background-color: #FFFFFF;
+}
+
+.table-row-cell:odd{
+    -fx-background-color:  #1a93d510;
+}
+
+.table-row-cell:even{
+    -fx-background-color: #1a93d530;
+}
+
+.table-view .virtual-flow .scroll-bar:vertical,
+.table-view .virtual-flow .scroll-bar:vertical .track,
+.table-view .virtual-flow .scroll-bar:vertical .track-background,
+.table-view .virtual-flow .scroll-bar:horizontal,
+.table-view .virtual-flow .scroll-bar:horizontal .track,
+.table-view .virtual-flow .scroll-bar:horizontal .track-background {
+    -fx-background-color: transparent;
+}
+
+.table-view .virtual-flow .scroll-bar .increment-button,
+.table-view .virtual-flow .scroll-bar .decrement-button {
+    -fx-opacity: 0;
+}
+.table-view .virtual-flow .scroll-bar:vertical .thumb{
+    -fx-background-color:  linear-gradient(to bottom, #1a93d5,  #1a93d566);
+}
+
+.table-view .virtual-flow .scroll-bar:horizontal .thumb {
+    -fx-background-color:  linear-gradient(to right, #1a93d5,  #1a93d566);
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #1a93d5;
+    -fx-background-radius: 15px;
+}
+
+.menu-button{
+    -fx-background-color:   #f0f0f0;
+    -fx-background-radius: 50px;
+    -fx-font-family: Georgia;
+    -fx-font-size: 16;
+}
+
+.menu-button:hover{
+    -fx-background-color: #048ED4;
+}
+
+.menu-item{
+    -fx-background-radius: 50px;
+    -fx-background-color: #f0f0f0;
+    -fx-cursor: HAND;
+}
+
+.menu-item .label{
+    -fx-text-fill: grey;
+}
+
+.menu-item:hover{
+    -fx-background-color: #048ED4;
+}
+
+
+.context-menu{
+    -fx-background-radius: 50px;
+    -fx-background-color: #f0f0f0;
+}
+
+.button{
+    -fx-background-color:  #E9E9E9;
+    -fx-border-radius: 100px;
+}
+
+.button:hover{
+    -fx-background-color: #048ED4;
+    -fx-background-radius: 100px;
+    -fx-text-fill: #ffffff;
+}
+
+.button:selected{
+    -fx-background-color: #048ED4;
+    -fx-background-radius: 100px;
+    -fx-text-fill: #ffffff;
+}
+/*------------------------*/
+
+/* Stylesheet */
+
+.menu-button{
+    -fx-background-color:   #92C3DB;
+    -fx-background-radius: 50px;
+    -fx-font-family: Georgia;
+    -fx-font-size: 16;
+}
+
+.menu-button:hover{
+    -fx-background-color: #11abdd;
+}
+
+.menu-item{
+    -fx-background-radius: 50px;
+    -fx-background-color: #f0f0f0;
+    -fx-cursor: HAND;
+}
+
+.menu-item .label{
+    -fx-text-fill: BLACK;
+}
+
+.menu-item:hover{
+    -fx-background-color: #11abdd;
+}
+
+
+.context-menu{
+    -fx-background-radius: 50px;
+    -fx-background-color: #f0f0f0;
+}
+/*------------------------*/
+.label{
+	-fx-text-fill: #BEE1E9;
+}
+#numberOfFacultiesPersianLabel{
+    -fx-text-fill: black;
+}
+#numberOfStudentsPersianLabel{
+    -fx-text-fill: black;
+}
+#numberOfCoursesPersianLabel{
+    -fx-text-fill: black;
+}
+#numberOfUsersPersianLabel{
+    -fx-text-fill: black;
+}
+#numberOfInstructorsPersianLabel{
+    -fx-text-fill: black;
+}
+#numberOfInstructorsLabel{
+    -fx-text-fill: black;
+}
+#numberOfStudentsLabel{
+    -fx-text-fill: black;
+}
+#numberOfCoursesLabel{
+    -fx-text-fill: black;
+}
+#numberOfUsersLabel{
+    -fx-text-fill: black;
+}
+#numberOfFacultiesLabel{
+    -fx-text-fill: black;
+}
+#ErrorLabel{
+	-fx-text-fill:white;
+}
+#anchorPane1{
+	-fx-background-color :  #363636;
+	-fx-background-radius : 80;
+}
+#anchorPane2{
+	-fx-background-color :  BLACK;
+	-fx-background-radius : 80;
+}
+#anchorPane3{
+	-fx-background-color :  BLACK;
+	-fx-background-radius : 80;
+}
+#anchorPane4{
+	-fx-background-color :  #1a93d5;
+	-fx-background-radius : 70;
+}
+#log{
+	-fx-background-color :  #363636;
+	-fx-background-radius : 80;
+}
+/*---------------*/
+
+
+/* button style*/
+#save{
+    -fx-background-color:  #1f3f6a;
+	-fx-background-radius: 80;
+    -fx-text-fill: white;
+}
+#save:hover{
+    -fx-background-color: #4C758A;
+    -fx-background-radius: 100px;
+    -fx-text-fill: #ffffff;
+}
+
+#selected{
+	-fx-background-color :  #11abdd;
+	-fx-background-radius : 100;
+	-fx-text-fill: white;
+}
+#aboutUsButton{
+    -fx-background-color :  #11abdd;
+    -fx-background-radius : 100;
+    -fx-text-fill: white;
+}
+.button{
+    -fx-focus-traversable: false;
+	-fx-border-radius: 50;
+    -fx-background-color: #363636;
+    -fx-text-fill: #FFFFFF;
+}
+.button:hover{
+    -fx-text-fill: #4C758A;
+    -fx-background-color: #11abdd;
+}
+.button:pressed {
+    -fx-text-fill: #08354B;
+}
+#CoursesTable:selected{
+    -fx-background-color: blue;
+}
+
+/*---------------------*/
+.combo-box-base
+{
+    -fx-background-color:  #92C3DB;
+	-fx-background-radius: 50;
+}
+.combo-box-base > .arrow-button {
+    -fx-background-color: #76B2D0;
+    -fx-background-radius: 50;
+}
+
+
+/*-------*/
+
+#instructorTableSearchBox{
+	-fx-background-color:  #92C3DB99;
+    -fx-text-fill: black;
+	-fx-background-radius: 50;
+}
+#courseSearchBox{
+	-fx-background-color:  #92C3DB99;
+    -fx-text-fill: black;
+	-fx-background-radius: 50;
+}
+#courseSearchBox1{
+    -fx-background-color:  #92C3DB99;
+    -fx-text-fill: black;
+    -fx-background-radius: 50;
+}
+#courseSearchBox2{
+    -fx-background-color:  #92C3DB99;
+    -fx-text-fill: black;
+    -fx-background-radius: 50;
+}
+#instructorSearchBox{
+	-fx-background-color:  #92C3DB99;
+    -fx-text-fill: black;
+	-fx-background-radius: 50;
+}
+#facultySearchBox{
+	-fx-background-color:  #92C3DB99;
+    -fx-text-fill: black;
+	-fx-background-radius: 50;
+}
+#searchBox{
+	-fx-background-color:  #92C3DB99;
+    -fx-text-fill: black;
+	-fx-background-radius: 50;
+}
+#userSearchBox{
+	-fx-background-color:  #92C3DB99;
+    -fx-text-fill: black;
+	-fx-background-radius: 50;
+}
+#studentSearchBox{
+	-fx-background-color:  #92C3DB99;
+    -fx-text-fill: black;
+	-fx-background-radius: 50;
+}
+#x{-fx-background-color:  #92C3DB99;
+    -fx-text-fill: black;
+	-fx-background-radius: 50;}
+#y{-fx-background-color:  #92C3DB99;
+    -fx-text-fill: black;
+	-fx-background-radius: 50;}
+/*delet*/
+#areYouSure{
+    -fx-background-color :  #1a93d5;
+    -fx-background-radius : 70;
+}
+/*homepageStyle*/
+#userName{
+    -fx-background-color: Transparent;
+    -fx-text-fill: white;
+}
+#T{
+    -fx-background-color: Transparent;
+    -fx-text-fill: white;
+}
+#time{
+    -fx-background-color: Transparent;
+    -fx-text-fill: white;
+}
+.tree-cell {
+    -fx-background-color:  #363636;
+    -fx-font-family: Georgia;
+    -fx-font-size: 13;
+    -fx-text-fill: white;
+    -fx-padding: 20;
+    -fx-background-radius: 50px;
+}
+
+.tree-cell:hover{
+    -fx-text-fill: white;
+    -fx-background-color: #11abdd;
+}
+
+.tree-cell:selected{
+    -fx-text-fill: white;
+    -fx-background-color: #11abdd;
+}
+
+.tree-cell:empty{
+    -fx-background-color: Transparent;
+}
+
+.tree-view{
+    -fx-background-color:  Transparent;
+}
+
+.menu-button{
+    -fx-background-radius: 50px;
+    -fx-font-family: Georgia;
+    -fx-font-size: 16;
+}
+
+.menu-button:hover{
+    -fx-text-fill: #4C758A;
+    -fx-background-color: #11abdd;
+}
+
+.menu-item{
+    -fx-background-radius: 50px;
+    -fx-background-color: Transparent;
+    -fx-cursor: HAND;
+}
+.menu-item .label{
+    -fx-text-fill: white;
+}
+
+.menu-item:hover{
+    -fx-text-fill: #4C758A;
+    -fx-background-color: #11abdd;
+}
+
+
+.context-menu{
+    -fx-background-radius: 50px;
+    -fx-background-color: Transparent;
+}
+
+.anchor{
+    -fx-background-color:  Transparent;
+    -fx-background-radius: 50px;
+
+}
+
+#addLoginError{
+	-fx-background-color:  #1a93d5;
+}
+#addErrorMessage{
+    -fx-font-family: Consolas;
+    -fx-highlight-fill: BLACk;
+    -fx-highlight-text-fill: BLACk;
+    -fx-text-fill: BLACk;
+    -fx-font-size: 20;
+}
+
+#addErrorMessage .content {
+    -fx-background-color:    #1a93d560;
+    -fx-highlight-fill: BLACk;
+    -fx-highlight-text-fill: BLACk;
+    -fx-text-fill: BLACk;
+    -fx-font-size: 20;
+}
+
+#addErrorMessage:focused .content {
+    -fx-background-color:    #1a93d560;
+    -fx-highlight-fill: BLACk;
+    -fx-highlight-text-fill: BLACk;
+    -fx-text-fill: BLACk;
+    -fx-font-size: 20;
+}
+#errorOk{
+	-fx-background-color: white;
+	-fx-text-fill: #1a93d5;
+}
+#editLoginError{
+	-fx-background-color:  #1a93d5;
+}
+#editErrorMessage{
+    -fx-font-family: Consolas;
+    -fx-highlight-fill: BLACk;
+    -fx-highlight-text-fill: BLACk;
+    -fx-text-fill: BLACk;
+    -fx-font-size: 20;
+}
+
+#editErrorMessage .content {
+    -fx-background-color:    #1a93d560;
+    -fx-highlight-fill: BLACk;
+    -fx-highlight-text-fill: BLACk;
+    -fx-text-fill: BLACk;
+    -fx-font-size: 20;
+}
+
+#editErrorMessage:focused .content {
+    -fx-background-color:    #1a93d560;
+    -fx-highlight-fill: BLACk;
+    -fx-highlight-text-fill: BLACk;
+    -fx-text-fill: BLACk;
+    -fx-font-size: 20;
+}
+#editFacultyError{
+	-fx-background-color:  #1a93d5;
+}
+#editFacultyErrorMessage{
+    -fx-font-family: Consolas;
+    -fx-highlight-fill: BLACk;
+    -fx-highlight-text-fill: BLACk;
+    -fx-text-fill: BLACk;
+    -fx-font-size: 20;
+}
+
+#editFacultyErrorMessage .content {
+    -fx-background-color:    #1a93d560;
+    -fx-highlight-fill: BLACk;
+    -fx-highlight-text-fill: BLACk;
+    -fx-text-fill: BLACk;
+    -fx-font-size: 20;
+}
+
+#editFacultyErrorMessage:focused .content {
+    -fx-background-color:    #1a93d560;
+    -fx-highlight-fill: BLACk;
+    -fx-highlight-text-fill: BLACk;
+    -fx-text-fill: BLACk;
+    -fx-font-size: 20;
+}
+
+#editError{
+	-fx-background-color:  #1a93d5;
+}
+#editErrorMessage{
+    -fx-font-family: Consolas;
+    -fx-highlight-fill: BLACk;
+    -fx-highlight-text-fill: BLACk;
+    -fx-text-fill: BLACk;
+    -fx-font-size: 20;
+}
+
+#editErrorMessage .content {
+    -fx-background-color:    #1a93d560;
+    -fx-highlight-fill: BLACk;
+    -fx-highlight-text-fill: BLACk;
+    -fx-text-fill: BLACk;
+    -fx-font-size: 20;
+}
+
+#editErrorMessage:focused .content {
+    -fx-background-color:    #1a93d560;
+    -fx-highlight-fill: BLACk;
+    -fx-highlight-text-fill: BLACk;
+    -fx-text-fill: BLACk;
+    -fx-font-size: 20;
+}
+#addFacultyError{
+	-fx-background-color:  #1a93d5;
+}
+#addFacultyErrorMessage{
+    -fx-font-family: Consolas;
+    -fx-highlight-fill: BLACk;
+    -fx-highlight-text-fill: BLACk;
+    -fx-text-fill: BLACk;
+    -fx-font-size: 20;
+}
+
+#addFacultyErrorMessage .content {
+    -fx-background-color:    #1a93d560;
+    -fx-highlight-fill: BLACk;
+    -fx-highlight-text-fill: BLACk;
+    -fx-text-fill: BLACk;
+    -fx-font-size: 20;
+}
+
+#addFacultyErrorMessage:focused .content {
+    -fx-background-color:    #1a93d560;
+    -fx-highlight-fill: BLACk;
+    -fx-highlight-text-fill: BLACk;
+    -fx-text-fill: BLACk;
+    -fx-font-size: 20;
+}
+#addError{
+	-fx-background-color:  #1a93d5;
+}
+#addErrorMessage{
+    -fx-font-family: Consolas;
+    -fx-highlight-fill: BLACk;
+    -fx-highlight-text-fill: BLACk;
+    -fx-text-fill: BLACk;
+    -fx-font-size: 20;
+}
+
+#addErrorMessage .content {
+    -fx-background-color:    #1a93d560;
+    -fx-highlight-fill: BLACk;
+    -fx-highlight-text-fill: BLACk;
+    -fx-text-fill: BLACk;
+    -fx-font-size: 20;
+}
+
+#addErrorMessage:focused .content {
+    -fx-background-color:    #1a93d560;
+    -fx-highlight-fill: BLACk;
+    -fx-highlight-text-fill: BLACk;
+    -fx-text-fill: BLACk;
+    -fx-font-size: 20;
+}
+
+/*not theme*/
+
+.notification-bar>.pane {
+    -fx-background-color: black;
+    -fx-padding: 5 5 5 5;
+    -fx-background-insets: 0, 1, 2;
+}
+
+.notification-bar>.pane .title {
+    -fx-font-size: 1.333em; /*16px;*/
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+
+.notification-bar>.pane .label {
+    -fx-font-size: 1em; /*12px;*/
+    -fx-text-fill: white;
+    -fx-alignment: top-left;
+}
+.notification-bar>.pane .close-button {
+    -fx-background-color: red;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 0 0 0 0;
+}
+
+.notification-bar > .pane .close-button:hover {
+    -fx-background-color: linear-gradient(#a3a3a3, #8b8b8b 34%, #777777 36%, #777777 63%, #8b8b8b 65%, #adadad);
+}
+
+.notification-bar>.pane .close-button:pressed {
+    -fx-background-color: linear-gradient(#a3a3a3, #8b8b8b 34%, #777777 36%, #777777 63%, #8b8b8b 65%, #adadad);
+
+}
+
+.notification-bar>.pane .close-button>.graphic {
+    -fx-background-color: #fff;
+    -fx-scale-shape: false;
+    -fx-padding: 4.5 4.5 4.5 4.5; /* Graphic is 9x9 px */
+}
+
+.notification-bar>.pane .close-button:hover>.graphic {
+    -fx-background-color: #fff;
+}
+
+.notification-bar>.pane .close-button:pressed>.graphic {
+    -fx-background-color: #fff;
+}
+
+.notification-bar>.pane .close-button>.graphic {
+    -fx-shape:
+            "M395.992,296.758l1.794-1.794l7.292,7.292l-1.795,1.794 L395.992,296.758z M403.256,294.992l1.794,1.794l-7.292,7.292l-1.794-1.795 L403.256,294.992z";
+}
